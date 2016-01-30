@@ -21,15 +21,11 @@ class ShittyCharGen:
     MouthFrame = None
     
     #File Paths
-    
-    BadCharGenPath = "C:/Users/TommyHanusa/Desktop/BadCharGen/"
-    
     HeadImagePaths = []
     HairImagePaths = []
     EyesImagePaths = []
     NoseImagePaths = []
     MouthImagePaths = []
-    XImagePaths = []
     
     #Current state of drawn objects?
     Head = None
@@ -37,6 +33,7 @@ class ShittyCharGen:
     Eyes = None
     Nose = None
     Mouth= None
+    
     #currentSelection
     HeadSelection = 0
     HairSelection = 0
@@ -228,35 +225,35 @@ class ShittyCharGen:
         self.DrawToCanvas(myCanvas, self.Mouth)
         self.DrawToCanvas(myCanvas, self.Hair)
         
-    def SetHairImagePaths(self, files = os.listdir(BadCharGenPath+"/Hair")):
+    def SetHairImagePaths(self, files = os.listdir(os.path.abspath(os.path.dirname(sys.argv[0]))+"/Hair")):
         #gets the image paths based on the location of the script. needs to find folder named "Hair"
         self.HairImagePaths = []
         for file in files:
             if file.endswith(".png"):
                 self.HairImagePaths.append(os.path.abspath(os.path.dirname(sys.argv[0]))+"\\Hair\\"+file)
                 
-    def SetHeadImagePaths(self, files = os.listdir(BadCharGenPath+"/Head")):
+    def SetHeadImagePaths(self, files = os.listdir(os.path.abspath(os.path.dirname(sys.argv[0]))+"/Head")):
         #gets the image paths based on the location of the script. needs to find folder named "Head"
         self.HeadImagePaths = []
         for file in files:
             if file.endswith(".png"):
                 self.HeadImagePaths.append(os.path.abspath(os.path.dirname(sys.argv[0]))+"\\Head\\"+file)   
                 
-    def SetEyesImagePaths(self, files = os.listdir(BadCharGenPath+"/Eyes")):
+    def SetEyesImagePaths(self, files = os.listdir(os.path.abspath(os.path.dirname(sys.argv[0]))+"/Eyes")):
         #gets the image paths based on the location of the script. needs to find folder named "Eyes"
         self.EyesImagePaths = []
         for file in files:
             if file.endswith(".png"):
                 self.EyesImagePaths.append(os.path.abspath(os.path.dirname(sys.argv[0]))+"\\Eyes\\"+file)    
                 
-    def SetMouthImagePaths(self, files = os.listdir(BadCharGenPath+"/Mouth")):
+    def SetMouthImagePaths(self, files = os.listdir(os.path.abspath(os.path.dirname(sys.argv[0]))+"/Mouth")):
         #gets the image paths based on the location of the script. needs to find folder named "Mouth"
         self.MouthImagePaths = []
         for file in files:
             if file.endswith(".png"):
                 self.MouthImagePaths.append(os.path.abspath(os.path.dirname(sys.argv[0]))+"\\Mouth\\"+file)  
                 
-    def SetNoseImagePaths(self, files = os.listdir(BadCharGenPath+"/Nose")):
+    def SetNoseImagePaths(self, files = os.listdir(os.path.abspath(os.path.dirname(sys.argv[0]))+"/Nose")):
         #gets the image paths based on the location of the script. needs to find folder named "Nose"
         self.NoseImagePaths = []
         for file in files:
