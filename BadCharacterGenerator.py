@@ -73,7 +73,6 @@ class ShittyCharGen:
         #make Some buttons
         
         
-        #self.NextHair = Button(self.appCanvas, text="Next", command=self.NextHairStyle)
         
         # get all hairs and faces and stuff
         self.SetHairImagePaths()
