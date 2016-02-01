@@ -3,10 +3,10 @@
 block_cipher = None
 
 
-a = Analysis(['BadCharacterGenerator.py'],
+a = Analysis(['badcharactergenerator.py'],
              pathex=['C:\\Users\\TommyHanusa\\Desktop\\BadCharacterGeneratorRepo\\BadCharacterGenerator'],
              binaries=None,
-             datas=None,
+             datas=[('Head/*.png', 'Head'),('Eyes/*.png', 'Eyes'),('Hair/*.png', 'Hair'),('Nose/*.png', 'Nose'),('Mouth/*.png', 'Mouth'),('BackGround.png', '.')],
              hiddenimports=[],
              hookspath=[],
              runtime_hooks=[],
@@ -19,7 +19,7 @@ pyz = PYZ(a.pure, a.zipped_data,
 exe = EXE(pyz,
           a.scripts,
           exclude_binaries=True,
-          name='BadCharacterGenerator',
+          name='badcharactergenerator',
           debug=False,
           strip=False,
           upx=True,
@@ -30,4 +30,4 @@ coll = COLLECT(exe,
                a.datas,
                strip=False,
                upx=True,
-               name='BadCharacterGenerator')
+               name='badcharactergenerator')

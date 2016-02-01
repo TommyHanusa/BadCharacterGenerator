@@ -85,6 +85,7 @@ class ShittyCharGen:
         #print(repr(self.EyesImagePaths))
         
         # draw to the canvas (prep images) this is an init
+        self.BackGround = self.SetAsImageUI(None, os.path.abspath(os.path.dirname(sys.argv[0]))+"\\BackGround.png")
         self.Head = self.SetAsImageUI(None, self.HeadImagePaths[0])
         self.Hair = self.SetAsImageUI(None, self.HairImagePaths[0])
         self.Eyes = self.SetAsImageUI(None, self.EyesImagePaths[0])
@@ -137,7 +138,7 @@ class ShittyCharGen:
         
     def SaveImage(self, filepath):
         #composite all images into one image and save them
-        final = self.Head['image'].copy() #ImageTk.PhotoImage("RGBA")
+        final = self.BackGround['image'].copy() #ImageTk.PhotoImage("RGBA")
         final.paste( self.Head['image'],None,self.Head['image'] )
         final.paste( self.Eyes['image'],None,self.Eyes['image'] )
         final.paste( self.Hair['image'],None,self.Hair['image'] )
